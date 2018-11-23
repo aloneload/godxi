@@ -1,0 +1,28 @@
+{
+    "name": "Product",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "pavilion",
+            "otherEntityName": "pavilion",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "material",
+            "otherEntityName": "material",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181123074738",
+    "entityTableName": "product",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "microserviceName": "godxi"
+}

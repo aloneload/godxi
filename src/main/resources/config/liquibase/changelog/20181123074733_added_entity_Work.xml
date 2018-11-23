@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="now()" dbms="mysql"/>
+    <property name="autoIncrement" value="true"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity Work.
+    -->
+    <changeSet id="20181123074733-1" author="jhipster">
+        <createTable tableName="work" remarks="作品">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="user_id" type="integer" remarks="Uid">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="name" type="varchar(255)" remarks="作品的名字">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="title" type="varchar(255)" remarks="作品标题">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="cover_url" type="varchar(255)" remarks="视频封面">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="video_url" type="varchar(255)" remarks="视频">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="duration" type="datetime" remarks="有效时间，整数，单位秒">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="categories" type="varchar(255)" remarks="分类">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="labels" type="varchar(255)" remarks="标签">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="description" type="varchar(255)" remarks="详细描述">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="create_date" type="datetime">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="update_date" type="datetime">
+                <constraints nullable="false" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        <dropDefaultValue tableName="work" columnName="duration" columnDataType="datetime"/>
+        <dropDefaultValue tableName="work" columnName="create_date" columnDataType="datetime"/>
+        <dropDefaultValue tableName="work" columnName="update_date" columnDataType="datetime"/>
+        
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+</databaseChangeLog>

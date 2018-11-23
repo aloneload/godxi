@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="now()" dbms="mysql"/>
+    <property name="autoIncrement" value="true"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity Material.
+    -->
+    <changeSet id="20181123074732-1" author="jhipster">
+        <createTable tableName="material" remarks="素材模板">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="jhi_type" type="varchar(255)" remarks="玩法或者活动分类">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="material_id" type="varchar(255)" remarks="素材id">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="name" type="varchar(255)" remarks="素材名称">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="original_price" type="decimal(10,2)" remarks="产品定价">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="description" type="varchar(255)" remarks="产品描述">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="resource_url" type="varchar(255)" remarks="资源url">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="create_date" type="datetime">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="update_date" type="datetime">
+                <constraints nullable="false" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        <dropDefaultValue tableName="material" columnName="create_date" columnDataType="datetime"/>
+        <dropDefaultValue tableName="material" columnName="update_date" columnDataType="datetime"/>
+        
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+</databaseChangeLog>

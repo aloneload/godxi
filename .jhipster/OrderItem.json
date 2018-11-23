@@ -1,0 +1,162 @@
+{
+    "name": "OrderItem",
+    "fields": [
+        {
+            "fieldName": "type",
+            "javadoc": "玩法或者活动分类",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "materialId",
+            "javadoc": "素材id",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "name",
+            "javadoc": "素材名称",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "originalPrice",
+            "javadoc": "产品原价",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "javadoc": "产品描述",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "resourceUrl",
+            "javadoc": "资源url",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "deviceId",
+            "javadoc": "设备ID",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "lon",
+            "javadoc": "经度",
+            "fieldType": "Double",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "lat",
+            "javadoc": "纬度",
+            "fieldType": "Double",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "country",
+            "javadoc": "国家",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "province",
+            "javadoc": "省份",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "city",
+            "javadoc": "城市",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "street",
+            "javadoc": "街道",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "address",
+            "javadoc": "详细地址",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "currentPrice",
+            "javadoc": "产品成交价格 打折后者优惠",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "productNum",
+            "javadoc": "商品数量",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "product",
+            "otherEntityName": "product",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "orderItem"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "orders",
+            "otherEntityName": "productOrder",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "orderItem"
+        }
+    ],
+    "changelogDate": "20181123074735",
+    "javadoc": "订单详情",
+    "entityTableName": "order_item",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "microserviceName": "godxi"
+}

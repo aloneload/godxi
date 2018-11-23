@@ -1,0 +1,74 @@
+{
+    "name": "ProductOrder",
+    "fields": [
+        {
+            "fieldName": "userId",
+            "javadoc": "UID",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "status",
+            "javadoc": "订单状态",
+            "fieldType": "OrderStatus",
+            "fieldValues": "NEW,UNPAID,PAID,CANCEL",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "totalAmount",
+            "javadoc": "订单总金额",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "payDate",
+            "javadoc": "支付时间",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "cancelDate",
+            "javadoc": "取消时间",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "createDate",
+            "javadoc": "创建时间",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "updateDate",
+            "javadoc": "更新时间",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20181123074734",
+    "javadoc": "订单",
+    "entityTableName": "product_order",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "microserviceName": "godxi"
+}

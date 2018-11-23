@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="now()" dbms="mysql"/>
+    <property name="autoIncrement" value="true"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity GodxiLicense.
+    -->
+    <changeSet id="20181123074736-1" author="jhipster">
+        <createTable tableName="godxi_license" remarks="许可证">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="email" type="varchar(255)" remarks="license 注册邮箱">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="device_id" type="varchar(255)" remarks="设备ID">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="issued_date" type="datetime" remarks="签发日期">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="expired_date" type="datetime" remarks="到期日期">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="version" type="varchar(255)" remarks="版本">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="valid" type="bit" remarks="是否有效">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="license_key" type="varchar(10000)" remarks="licenseKey">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="create_date" type="datetime">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="update_date" type="datetime">
+                <constraints nullable="false" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        <dropDefaultValue tableName="godxi_license" columnName="issued_date" columnDataType="datetime"/>
+        <dropDefaultValue tableName="godxi_license" columnName="expired_date" columnDataType="datetime"/>
+        <dropDefaultValue tableName="godxi_license" columnName="create_date" columnDataType="datetime"/>
+        <dropDefaultValue tableName="godxi_license" columnName="update_date" columnDataType="datetime"/>
+        
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+</databaseChangeLog>
