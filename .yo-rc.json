@@ -1,0 +1,38 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "godxi",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "5.2.1",
+    "applicationType": "microservice",
+    "baseName": "godxi",
+    "packageName": "godxi",
+    "packageFolder": "godxi",
+    "serverPort": "8081",
+    "authenticationType": "jwt",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "85836ccebc1ee39b39dc18ff82460c197f875caf",
+    "enableTranslation": true,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "clientPackageManager": "yarn",
+    "nativeLanguage": "en",
+    "languages": [
+      "en",
+      "zh-cn"
+    ],
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}
